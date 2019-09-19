@@ -5,14 +5,13 @@ var STAT_Y_POS = 10;
 var STAT_HEIGHT = 270;
 var STAT_WIDTH = 420;
 var STAT_OFFSET = 10;
-
 var STAT_TEXT_HEIGHT = 25;
-
 var BAR_HEIGHT = 150;
 var BAR_COLUMN_WIDTH = 40;
 var BAR_COLUMN_PADDING = 50;
 var BAR_TEXT_HEIGHT = 15;
 
+  // Текст сообщения
 var drawText = function (ctx, x, y) {
   ctx.fillStyle = 'black';
   ctx.textBaseline = 'top';
@@ -21,10 +20,10 @@ var drawText = function (ctx, x, y) {
   ctx.fillText('Список результатов:', x, y + STAT_TEXT_HEIGHT);
 };
 
+  // Выведение гистограммы
 var drawItem = function (ctx, itemIndex, x, y, names, times) {
   var maxTime = Math.max.apply(null, times);
   var itemHeight = times[itemIndex] * (BAR_HEIGHT - BAR_TEXT_HEIGHT) / maxTime;
-
   var itemX = x + (itemIndex + 1) * BAR_COLUMN_PADDING + itemIndex * BAR_COLUMN_WIDTH;
   var itemY = y + BAR_HEIGHT - itemHeight;
 
