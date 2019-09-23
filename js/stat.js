@@ -11,7 +11,7 @@ var BAR_COLUMN_WIDTH = 40;
 var BAR_COLUMN_PADDING = 50;
 var BAR_TEXT_HEIGHT = 15;
 
-  // Текст сообщения
+// Текст сообщения
 var drawText = function (ctx, x, y) {
   ctx.fillStyle = 'black';
   ctx.textBaseline = 'top';
@@ -20,7 +20,7 @@ var drawText = function (ctx, x, y) {
   ctx.fillText('Список результатов:', x, y + STAT_TEXT_HEIGHT);
 };
 
-  // Выведение гистограммы
+// Выведение гистограммы
 var drawItem = function (ctx, itemIndex, x, y, names, times) {
   var maxTime = Math.max.apply(null, times);
   var itemHeight = times[itemIndex] * (BAR_HEIGHT - BAR_TEXT_HEIGHT) / maxTime;
