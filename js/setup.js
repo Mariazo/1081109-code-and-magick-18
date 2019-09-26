@@ -32,10 +32,7 @@ var COAT_COLORS = [
 ];
 
 var EYE_COLORS = ['black', 'red', 'blue', 'yellow', 'green'];
-
 var WIZARD_COUNT = 4;
-
-document.querySelector('.setup').classList.remove('hidden');
 
 var wizardTemplate = document
   .querySelector('#similar-wizard-template')
@@ -43,14 +40,15 @@ var wizardTemplate = document
 
 var listOfWizards = document.querySelector('.setup-similar-list');
 
-var getRandomArrayElement = function (arr) {
+//Получение случайного элемента массива
+var getRandomArrayElement = function(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 };
 
-var createRandomMage = function (firstNames, secondNames, coatColors, eyeColors) {
+//Создание случайного мага
+var createRandomMage = function(firstNames, secondNames, coatColors, eyeColors) {
   return {
-    name:
-      getRandomArrayElement(firstNames) +
+    name: getRandomArrayElement(firstNames) +
       ' ' +
       getRandomArrayElement(secondNames),
     coatColor: getRandomArrayElement(coatColors),
@@ -58,7 +56,8 @@ var createRandomMage = function (firstNames, secondNames, coatColors, eyeColors)
   };
 };
 
-var createArmy = function (strength) {
+//Создание армии (цикл создания рандомного набора магов)
+var createArmy = function(strength) {
   var army = [];
 
   for (var i = 0; i < strength; i++) {
@@ -70,7 +69,8 @@ var createArmy = function (strength) {
 
 var army = createArmy(WIZARD_COUNT);
 
-var renderWizard = function (wizard) {
+//Визуализация магов
+var renderWizard = function(wizard) {
   var randomWizard = wizardTemplate.cloneNode(true);
 
   randomWizard.querySelector('.setup-similar-label').textContent = wizard.name;
@@ -80,16 +80,23 @@ var renderWizard = function (wizard) {
   return randomWizard;
 };
 
-var renderArmy = function () {
+//Визуализация армии магов
+var renderArmy = function() {
   var fragment = document.createDocumentFragment();
 
-  for (var i = 0; i < army.length; i++) {
-    fragment.appendChild(renderWizard(army[i]));
-  }
+//for (var i = 0; i < army.lenght; i++) {
+//  fragment.appendChild(renderWizard(army[i]));
+//}
+  army.forEach(function(item, i, arr) {
 
+  });
   return listOfWizards.appendChild(fragment);
 };
 
 renderArmy();
 
-document.querySelector('.setup-similar').classList.remove('hidden');
+//Удаление класса
+function showElement(selector) {
+  document.querySelector(selector).classList.remove('hidden');
+}
+showElement('.setup');
