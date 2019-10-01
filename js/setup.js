@@ -84,7 +84,7 @@ var renderWizard = function (wizard) {
 var renderArmy = function () {
   var fragment = document.createDocumentFragment();
 
-  army.forEach(function (item, i, arr) {
+  army.forEach(function (item) {
     fragment.appendChild(renderWizard(item));
   });
   return listOfWizards.appendChild(fragment);
