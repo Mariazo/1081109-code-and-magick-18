@@ -77,18 +77,15 @@ var renderWizard = function (wizard) {
   randomWizard.querySelector('.wizard-coat').style.fill = wizard.coatColor;
   randomWizard.querySelector('.wizard-eyes').style.fill = wizard.eyesColor;
 
-  return renderWizard;
+  return randomWizard;
 };
 
 // Визуализация армии магов
 var renderArmy = function () {
   var fragment = document.createDocumentFragment();
 
-//  for (var i = 0; i < army.lenght; i++) {
-//  fragment.appendChild(renderWizard(army[i]));
-//  }
   army.forEach(function (item, i, arr) {
-
+    fragment.appendChild(renderWizard(item));
   });
   return listOfWizards.appendChild(fragment);
 };
