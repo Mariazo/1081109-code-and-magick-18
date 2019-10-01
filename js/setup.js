@@ -34,10 +34,6 @@ var COAT_COLORS = [
 var EYE_COLORS = ['black', 'red', 'blue', 'yellow', 'green'];
 var WIZARD_COUNT = 4;
 
-var wizardTemplate = document
-  .querySelector('#similar-wizard-template')
-  .content.querySelector('div');
-
 var listOfWizards = document.querySelector('.setup-similar-list');
 
 // Получение случайного элемента массива
@@ -71,6 +67,10 @@ var army = createArmy(WIZARD_COUNT);
 
 // Визуализация магов
 var renderWizard = function (wizard) {
+  var wizardTemplate = document
+    .querySelector('#similar-wizard-template')
+    .content.querySelector('div');
+
   var randomWizard = wizardTemplate.cloneNode(true);
 
   randomWizard.querySelector('.setup-similar-label').textContent = wizard.name;
