@@ -53,13 +53,7 @@ var wizardEyesColor = wizardSetup.querySelector('input[name="eyes-color"]');
 var fireball = document.querySelector('.setup-fireball-wrap');
 var fireballColor = fireball.querySelector('input[name="fireball-color"]');
 
-var wizardTemplate = document.querySelector('#similar-wizard-template')
-    .content
-    .querySelector('.setup-similar-item');
-
 var listOfWizards = document.querySelector('.setup-similar-list');
-
-var army = [];
 
 // Получение случайного элемента массива
 var getRandomArrayElement = function (arr) {
